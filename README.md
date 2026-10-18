@@ -1,39 +1,25 @@
 # Jornadas de Desarrollo Web 2026
 
-Sitio web de un evento académico. Presenta el programa de charlas y talleres, la información de la sede y un formulario de inscripción.
+Es una página para un evento académico inventado: dos días de charlas y talleres sobre desarrollo web.
 
-## Enlaces
+Demostración: https://rositasilva.github.io/sitio-jornadas-web/
+Repositorio: https://github.com/rositasilva/sitio-jornadas-web
 
-- Demostración: https://rositasilva.github.io/sitio-jornadas-web/
-- Repositorio: https://github.com/rositasilva/sitio-jornadas-web
+## Qué tiene la página
 
-## Qué incluye
+Tiene cuatro secciones: inicio, programa, sede e inscripción. El diseño lo hice pensando primero en el celular y después lo adapté a pantallas más grandes con dos media queries. Usé Bootstrap solo para la rejilla y los botones; los colores, las variables y el menú los escribí yo en `css/styles.css`.
 
-- Cuatro secciones: Inicio, Programa, Sede e Inscripción.
-- HTML5 semántico, con encabezados en orden, imagen con texto alternativo y formulario con etiquetas asociadas.
-- CSS mobile first con variables, Bootstrap 5 para la rejilla y dos media queries propias (48em y 64em).
-- JavaScript sin librerías, con tres interacciones: menú adaptable, filtro del programa por tipo de actividad y validación del formulario con mensajes por campo.
+En JavaScript hice tres cosas, sin librerías: el menú que se abre y se cierra en pantallas pequeñas, un filtro para ver solo charlas o solo talleres, y la validación del formulario de inscripción.
 
-## Estructura
+## Archivos
 
-    sitio-jornadas-web/
-    ├── css/styles.css
-    ├── img/hero.svg
-    ├── js/main.js 
-    └── index.html
+- `index.html`: la estructura de la página
+- `css/styles.css`: los estilos
+- `js/main.js`: el menú, el filtro y el formulario
+- `img/hero.svg`: la ilustración de la portada
 
-## Cómo verlo en local
+## Cómo abrirla
 
-1. Descargar o clonar el repositorio.
-2. Abrir `index.html` en el navegador. No necesita servidor, pero sí internet para cargar Bootstrap.
-
-## Accesibilidad
-
-- Enlace "Saltar al contenido" y foco visible al navegar con teclado.
-- Menú con `aria-expanded` y cierre con la tecla Escape.
-- Errores del formulario asociados a cada campo con `aria-describedby` y `aria-invalid`.
-- El contador del filtro se anuncia a lectores de pantalla con `aria-live`.
-
-## Autora
+Se descarga el repositorio y se abre `index.html` en el navegador. Hace falta internet porque Bootstrap se carga desde un CDN.
 
 Rosa Silva
