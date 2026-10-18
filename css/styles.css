@@ -91,3 +91,13 @@ input[aria-invalid="true"], select[aria-invalid="true"] { border-color: var(--er
 }
 
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+/* Rejilla de la sección Sede, propia porque el dl no admite las columnas de Bootstrap */
+.datos { display: grid; gap: 1rem; margin: 0; }
+
+@media (min-width: 48em) {
+  .datos { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 64em) {
+  .datos { grid-template-columns: repeat(4, 1fr); }
+}
