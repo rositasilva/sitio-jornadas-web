@@ -1,0 +1,93 @@
+
+/* Variables propias: Bootstrap las usa para los botones más abajo */
+:root {
+  --tinta: #3D1A54;
+  --marino: #B5307A;
+  --senal: #FFC83D;
+  --fondo: #FBF3F8;
+  --blanco: #fff;
+  --error: #B00020;
+  --radio: 8px;
+  --espacio: 1rem;
+}
+
+/* Base (mobile first) */
+html { scroll-behavior: smooth; scroll-padding-top: 4.5rem; }
+body { color: var(--tinta); background: var(--fondo); line-height: 1.6; }
+h1 { font-size: 2rem; line-height: 1.2; }
+h2 { font-size: 1.6rem; }
+p { max-width: 65ch; }
+
+/* Foco visible */
+:focus-visible { outline: 3px solid var(--senal) !important; outline-offset: 3px; box-shadow: 0 0 0 6px var(--tinta) !important; }
+
+.saltar { position: absolute; left: -999px; background: var(--senal); color: var(--tinta); padding: .5rem 1rem; z-index: 20; }
+.saltar:focus { left: 0; }
+
+/* Botones de Bootstrap con los colores propios */
+.btn-primary {
+  --bs-btn-bg: var(--marino);
+  --bs-btn-border-color: var(--marino);
+  --bs-btn-hover-bg: var(--tinta);
+  --bs-btn-hover-border-color: var(--tinta);
+  --bs-btn-active-bg: var(--tinta);
+  --bs-btn-active-border-color: var(--tinta);
+}
+.btn-outline-primary {
+  --bs-btn-color: var(--marino);
+  --bs-btn-border-color: var(--marino);
+  --bs-btn-hover-bg: var(--marino);
+  --bs-btn-hover-border-color: var(--marino);
+  --bs-btn-active-bg: var(--tinta);
+  --bs-btn-active-border-color: var(--tinta);
+}
+.filtro[aria-pressed="true"] { background: var(--marino); color: var(--blanco); }
+
+/* Cabecera y menú */
+.cabecera { position: sticky; top: 0; z-index: 10; background: var(--tinta); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; padding: .5rem var(--espacio); }
+.marca { color: var(--blanco); font-weight: 700; text-decoration: none; }
+.menu-btn { background: transparent; color: var(--blanco); border: 2px solid var(--blanco); border-radius: var(--radio); padding: .4rem .9rem; font: inherit; cursor: pointer; }
+nav { flex-basis: 100%; }
+.menu { list-style: none; margin: 0; padding: 0; display: none; }
+.menu.abierto { display: block; }
+.menu a { display: block; color: var(--blanco); padding: .75rem 0; text-decoration: none; }
+.menu a:hover { text-decoration: underline; }
+
+/* Programa */
+.conteo { font-size: .95rem; }
+.tarjeta { height: 100%; background: var(--blanco); border-left: 6px solid var(--senal); border-radius: var(--radio); padding: var(--espacio); }
+.actividad[data-tipo="taller"] .tarjeta { border-left-color: var(--marino); }
+.tarjeta h3 { font-size: 1.1rem; margin: 0 0 .25rem; }
+.tarjeta p { margin: 0; }
+
+/* Sede */
+.dato { height: 100%; background: var(--blanco); border-radius: var(--radio); padding: var(--espacio); }
+.dato dt { font-weight: 700; }
+.dato dd { margin: 0; }
+
+/* Formulario */
+form { max-width: 32rem; }
+.form-control, .form-select { border: 2px solid var(--tinta); }
+input[aria-invalid="true"], select[aria-invalid="true"] { border-color: var(--error); }
+.error { color: var(--error); margin: .3rem 0 0; min-height: 1.2em; font-size: .95rem; }
+.resultado { font-weight: 600; margin-top: 1rem; }
+
+.pie { background: var(--tinta); color: var(--blanco); text-align: center; padding: 1.5rem var(--espacio); }
+.pie p { margin-inline: auto; }
+
+/* Media query 1 (tablet, 48em): ya hay ancho para mostrar el menú en una fila y se oculta el botón */
+@media (min-width: 48em) {
+  .menu-btn { display: none; }
+  nav { flex-basis: auto; }
+  .menu, .menu.abierto { display: flex; gap: 1.5rem; }
+  .menu a { padding: .4rem 0; }
+}
+
+/* Media query 2 (escritorio, 64em): con líneas más largas se agrandan los títulos y se respira más la cabecera */
+@media (min-width: 64em) {
+  h1 { font-size: 2.8rem; }
+  h2 { font-size: 2rem; }
+  .cabecera { padding-inline: 2rem; }
+}
+
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

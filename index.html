@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jornadas de Desarrollo Web 2026</title>
+  <meta name="description" content="Dos días de charlas y talleres de desarrollo web para estudiantes de ingeniería.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <header class="cabecera">
+    <a class="marca" href="#inicio">Jornadas Web 2026</a>
+    <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="menu">Menú</button>
+    <nav aria-label="Principal">
+      <ul id="menu" class="menu">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#programa">Programa</a></li>
+        <li><a href="#sede">Sede</a></li>
+        <li><a href="#inscripcion">Inscripción</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <section id="inicio" class="container py-5" aria-labelledby="t-inicio">
+      <div class="row align-items-center g-4">
+        <div class="col-12 col-lg-6">
+          <h1 id="t-inicio">Jornadas de Desarrollo Web 2026</h1>
+          <p>Dos días de charlas y talleres prácticos sobre HTML, CSS y JavaScript, pensados para estudiantes de ingeniería.</p>
+          <a class="btn btn-primary btn-lg" href="#inscripcion">Inscribirme</a>
+        </div>
+        <div class="col-12 col-lg-6">
+          <img class="img-fluid rounded" src="img/hero.svg" width="640" height="400" alt="Ilustración de una pantalla con código y una persona exponiendo en un auditorio">
+        </div>
+      </div>
+    </section>
+
+    <section id="programa" class="container py-5" aria-labelledby="t-programa">
+      <h2 id="t-programa">Programa</h2>
+      <div class="d-flex flex-wrap gap-2 mb-2" role="group" aria-label="Filtrar actividades por tipo">
+        <button type="button" class="btn btn-outline-primary filtro" data-tipo="todas" aria-pressed="true">Todas</button>
+        <button type="button" class="btn btn-outline-primary filtro" data-tipo="charla" aria-pressed="false">Charlas</button>
+        <button type="button" class="btn btn-outline-primary filtro" data-tipo="taller" aria-pressed="false">Talleres</button>
+      </div>
+      <p id="conteo" class="conteo" role="status" aria-live="polite"></p>
+      <ul class="row g-3 list-unstyled mb-0">
+        <li class="col-12 col-md-6 col-lg-3 actividad" data-tipo="charla">
+          <div class="tarjeta"><h3>Accesibilidad desde el primer commit</h3><p>Jueves 5 de noviembre, 09:00. Charla de 45 minutos.</p></div>
+        </li>
+        <li class="col-12 col-md-6 col-lg-3 actividad" data-tipo="taller">
+          <div class="tarjeta"><h3>Diseño mobile first con Flexbox y Grid</h3><p>Jueves 5 de noviembre, 11:00. Taller de 2 horas.</p></div>
+        </li>
+        <li class="col-12 col-md-6 col-lg-3 actividad" data-tipo="charla">
+          <div class="tarjeta"><h3>Rendimiento y buenas prácticas en el navegador</h3><p>Viernes 6 de noviembre, 09:00. Charla de 45 minutos.</p></div>
+        </li>
+        <li class="col-12 col-md-6 col-lg-3 actividad" data-tipo="taller">
+          <div class="tarjeta"><h3>Validación de formularios sin librerías</h3><p>Viernes 6 de noviembre, 11:00. Taller de 2 horas.</p></div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="sede" class="container py-5" aria-labelledby="t-sede">
+      <h2 id="t-sede">Sede e información</h2>
+      <dl class="row g-3 mb-0">
+        <div class="col-12 col-md-6 col-lg-3"><div class="dato"><dt>Lugar</dt><dd>Auditorio principal- Guayaquil</dd></div></div>
+        <div class="col-12 col-md-6 col-lg-3"><div class="dato"><dt>Fechas</dt><dd>5 y 6 de noviembre de 2026</dd></div></div>
+        <div class="col-12 col-md-6 col-lg-3"><div class="dato"><dt>Horario</dt><dd>De 09:00 a 13:00</dd></div></div>
+        <div class="col-12 col-md-6 col-lg-3"><div class="dato"><dt>Costo</dt><dd>Gratuito, con cupos limitados</dd></div></div>
+      </dl>
+    </section>
+
+    <section id="inscripcion" class="container py-5" aria-labelledby="t-insc">
+      <h2 id="t-insc">Inscripción</h2>
+      <form id="form" novalidate>
+        <div class="mb-3">
+          <label class="form-label" for="nombre">Nombre completo</label>
+          <input class="form-control" id="nombre" name="nombre" type="text" autocomplete="name" required aria-describedby="e-nombre">
+          <p class="error" id="e-nombre"></p>
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="correo">Correo electrónico</label>
+          <input class="form-control" id="correo" name="correo" type="email" autocomplete="email" required aria-describedby="e-correo">
+          <p class="error" id="e-correo"></p>
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="dia">Día de asistencia</label>
+          <select class="form-select" id="dia" name="dia" required aria-describedby="e-dia">
+            <option value="">Seleccione una opción</option>
+            <option>Jueves 5</option>
+            <option>Viernes 6</option>
+            <option>Ambos días</option>
+          </select>
+          <p class="error" id="e-dia"></p>
+        </div>
+        <button class="btn btn-primary" type="submit">Enviar inscripción</button>
+        <p id="resultado" class="resultado" role="status" tabindex="-1"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="pie"><p>Evento académico.</p></footer>
+</body>
+</html>
